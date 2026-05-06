@@ -543,6 +543,94 @@ h2 span{color:var(--gold)}
 .f-links a{font-size:.8rem;color:var(--tx3);transition:color .3s}
 .f-links a:hover{color:var(--gold)}
 
+/* ── REFLEXME SHOWCASE ── */
+.reflexme-showcase{
+  display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;
+  background:var(--s1);border:1px solid rgba(201,168,76,.15);
+  border-radius:var(--r2);padding:52px 48px;
+  position:relative;overflow:hidden;
+}
+.reflexme-showcase::before{
+  content:'';position:absolute;top:-80px;right:-80px;
+  width:360px;height:360px;
+  background:radial-gradient(circle,rgba(201,168,76,.08) 0%,transparent 70%);
+  pointer-events:none;
+}
+.rxm-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,0,0,.6);border:1px solid rgba(201,168,76,.3);
+  color:var(--gold);font-size:.75rem;font-weight:700;letter-spacing:1px;
+  padding:6px 16px;border-radius:50px;margin-bottom:18px;
+}
+.rxm-left h3{
+  font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3rem);
+  font-weight:800;margin-bottom:6px;
+}
+.rxm-tagline{
+  font-size:1rem;font-weight:600;color:var(--gold);margin-bottom:16px;
+}
+.rxm-desc{font-size:.93rem;color:var(--tx2);line-height:1.8;margin-bottom:28px}
+.rxm-features{display:flex;flex-direction:column;gap:11px;margin-bottom:34px}
+.rxm-features li{
+  display:flex;align-items:center;gap:12px;
+  font-size:.88rem;color:var(--tx2);
+}
+.rxm-features li i{color:var(--gold);width:16px;text-align:center;flex-shrink:0}
+.rxm-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn-appstore{
+  display:inline-flex;align-items:center;gap:12px;
+  background:linear-gradient(135deg,#1a1a1a,#2a2a2a);
+  border:1.5px solid rgba(201,168,76,.4);
+  color:var(--tx);padding:12px 22px;border-radius:12px;
+  transition:var(--tr);
+}
+.btn-appstore:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:var(--shg)}
+.btn-appstore i{font-size:1.8rem;color:var(--gold)}
+.btn-appstore small{display:block;font-size:.68rem;color:var(--tx2);letter-spacing:.5px}
+.btn-appstore strong{font-size:1rem;font-weight:700}
+.rxm-more{font-size:.8rem;padding:12px 20px}
+
+/* phone mockups */
+.rxm-right{display:flex;justify-content:center;padding:20px 0}
+.rxm-phone-wrap{position:relative;width:280px;height:380px}
+.rxm-phone{
+  position:absolute;
+  width:160px;border-radius:28px;overflow:hidden;
+  border:2px solid rgba(201,168,76,.3);
+  box-shadow:0 20px 60px rgba(0,0,0,.7);
+}
+.rxm-phone img{width:100%;height:220px;object-fit:cover}
+.rxm-phone-1{top:0;left:0;z-index:2;transform:rotate(-4deg)}
+.rxm-phone-2{top:60px;right:0;z-index:1;transform:rotate(4deg)}
+.rxm-glow{
+  position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:200px;height:80px;
+  background:radial-gradient(ellipse,rgba(201,168,76,.25) 0%,transparent 70%);
+}
+@media(max-width:900px){
+  .reflexme-showcase{grid-template-columns:1fr;gap:44px;padding:36px 28px}
+  .rxm-right{justify-content:flex-start}
+}
+@media(max-width:480px){
+  .rxm-actions{flex-direction:column;align-items:flex-start}
+  .reflexme-showcase{padding:28px 20px}
+}
+
+/* ── FOOTER APP STORE BTN ── */
+.footer-appstore-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);
+  color:var(--tx);padding:12px 18px;border-radius:10px;
+  transition:var(--tr);margin-bottom:14px;
+}
+.footer-appstore-btn:hover{border-color:var(--gold);background:rgba(201,168,76,.1)}
+.footer-appstore-btn i{font-size:1.5rem;color:var(--gold)}
+.footer-appstore-btn small{display:block;font-size:.64rem;color:var(--tx2)}
+.footer-appstore-btn strong{font-size:.9rem;font-weight:700}
+.f-contact-info{margin-top:4px}
+.f-contact-info span{font-size:.85rem;color:var(--tx2);display:flex;align-items:center;gap:8px}
+.f-contact-info i{color:var(--gold)}
+
 /* ── BACK TO TOP ── */
 .btt{
   position:fixed;bottom:28px;right:28px;z-index:500;

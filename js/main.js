@@ -153,32 +153,47 @@ pfBtns.forEach(btn => {
   buildDots();
 })();
 
-/* ── CONTACT FORM ── */
+/* ── CONTACT FORM — sends to reflexmeapp@gmail.com via FormSubmit ── */
 const contactForm = document.getElementById('contactForm');
 const fSuccess    = document.getElementById('fSuccess');
 const btnText     = document.getElementById('btnText');
 if (contactForm) {
-  contactForm.addEventListener('submit', e => {
+  contactForm.addEventListener('submit', async e => {
     e.preventDefault();
-    if (btnText) { btnText.textContent = 'Sending…'; }
-    setTimeout(() => {
-      contactForm.reset();
+    if (btnText) btnText.textContent = 'Sending…';
+
+    const data = new FormData(contactForm);
+    // Build a readable body
+    const body = {
+      name:    data.get('name')    || '',
+      email:   data.get('email')   || '',
+      phone:   data.get('phone')   || '',
+      service: data.get('service') || '',
+      message: data.get('message') || ''
+    };
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/reflexmeapp@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: 'New Contact from Phantoms IT Website',
+          ...body
+        })
+      });
+      const json = await res.json();
+      if (json.success === 'true' || json.success === true) {
+        contactForm.reset();
+        if (btnText) btnText.textContent = 'Send Message';
+        if (fSuccess) { fSuccess.style.display = 'block'; setTimeout(() => fSuccess.style.display = 'none', 6000); }
+      } else {
+        throw new Error('Failed');
+      }
+    } catch {
       if (btnText) btnText.textContent = 'Send Message';
-      if (fSuccess) { fSuccess.style.display = 'block'; setTimeout(() => fSuccess.style.display = 'none', 5000); }
-    }, 1400);
+      alert('Something went wrong. Please email us directly at reflexmeapp@gmail.com');
+    }
   });
 }
 
-/* ── NEWSLETTER FORM ── */
-const nlForm = document.getElementById('nlForm');
-if (nlForm) {
-  nlForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const input = nlForm.querySelector('input');
-    const btn   = nlForm.querySelector('button');
-    const orig  = btn.innerHTML;
-    btn.innerHTML = '<i class="fa-solid fa-check"></i>';
-    if (input) input.value = '';
-    setTimeout(() => btn.innerHTML = orig, 3000);
-  });
-}
+/* ── END ── */
