@@ -23,14 +23,19 @@
       </a>
       <nav id="nav">
         <ul>
-          <li><a href="#home"      class="nav-link active">Home</a></li>
-          <li><a href="#services"  class="nav-link">Services</a></li>
-          <li><a href="#about"     class="nav-link">About</a></li>
-          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-          <li><a href="#contact"   class="nav-link">Contact</a></li>
+          <li><a href="#home"      class="nav-link active" data-i18n="nav.home">Home</a></li>
+          <li><a href="#services"  class="nav-link" data-i18n="nav.services">Services</a></li>
+          <li><a href="#about"     class="nav-link" data-i18n="nav.about">About</a></li>
+          <li><a href="#portfolio" class="nav-link" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li><a href="#contact"   class="nav-link" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </nav>
-      <a href="#contact" class="btn-gold nav-cta">Get a Quote</a>
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="uk">UK</button>
+      </div>
+      <a href="#contact" class="btn-gold nav-cta"><span data-i18n="nav.cta">Get a Quote</span></a>
       <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </header>
@@ -40,12 +45,12 @@
     <div class="hero-bg-img"></div>
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-      <div class="hero-badge"><span class="pulse-dot"></span> Available for New Projects</div>
-      <h1>We Build <span>Digital</span><br>Solutions That<br><span>Ghost</span> Your Competition</h1>
-      <p>Phantoms IT delivers cutting-edge web, mobile and AI solutions. We work in the shadows — our results speak for themselves.</p>
+      <div class="hero-badge"><span class="pulse-dot"></span> <span data-i18n="hero.badge">Available for New Projects</span></div>
+      <h1 data-i18n-html="hero.h1">We Build <span>Digital</span><br>Solutions That<br><span>Ghost</span> Your Competition</h1>
+      <p data-i18n="hero.p">Phantoms IT delivers cutting-edge web, mobile and AI solutions. We work in the shadows — our results speak for themselves.</p>
       <div class="hero-actions">
-        <a href="#services" class="btn-gold">Explore Services <i class="fas fa-arrow-right"></i></a>
-        <a href="#portfolio" class="btn-ghost">View Our Work</a>
+        <a href="#services" class="btn-gold"><span data-i18n="hero.btn1">Explore Services</span> <i class="fas fa-arrow-right"></i></a>
+        <a href="#portfolio" class="btn-ghost" data-i18n="hero.btn2">View Our Work</a>
       </div>
     </div>
     <div class="hero-scroll"><div class="scroll-mouse"><div class="scroll-wheel"></div></div><span>Scroll</span></div>
@@ -69,47 +74,53 @@
     </div>
   </div>
 
-  <!-- SERVICES -->
+  <!-- SERVICES — 3 cards, no AI standalone -->
   <section id="services" class="section services-sec">
     <div class="container">
       <div class="sec-head reveal">
-        <span class="sec-tag">What We Do</span>
-        <h2>Our <span>Services</span></h2>
-        <p>From concept to deployment — every layer of your digital transformation covered.</p>
+        <span class="sec-tag" data-i18n="sec.services.tag">What We Do</span>
+        <h2 data-i18n-html="sec.services.h2">Our <span>Services</span></h2>
+        <p data-i18n="sec.services.p">From concept to deployment — every layer of your digital transformation covered.</p>
       </div>
-      <div class="services-grid">
+      <div class="services-grid services-grid-3">
         <div class="s-card reveal">
           <div class="s-num">01</div>
           <div class="s-icon"><i class="fas fa-code"></i></div>
-          <h3>Web Development</h3>
-          <p>High-performance websites and web apps built with React, Next.js, Vue, Laravel and more.</p>
-          <ul><li>Custom Web Applications</li><li>E-Commerce Platforms</li><li>CMS &amp; API Development</li></ul>
-          <a href="#contact" class="s-link">Get Started <i class="fas fa-arrow-right"></i></a>
+          <h3 data-i18n="s1.h3">Web Development</h3>
+          <p data-i18n="s1.p">High-performance websites and web apps built with React, Next.js, Vue, Laravel and more.</p>
+          <ul>
+            <li data-i18n="s1.li1">Custom Web Applications</li>
+            <li data-i18n="s1.li2">E-Commerce Platforms</li>
+            <li data-i18n="s1.li3">CMS &amp; API Development</li>
+            <li data-i18n="s1.li4">AI Integration for Web</li>
+          </ul>
+          <a href="#contact" class="s-link"><span data-i18n="s.link">Get Started</span> <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="s-card featured reveal">
           <div class="feat-tag">Most Popular</div>
           <div class="s-num">02</div>
           <div class="s-icon"><i class="fas fa-mobile-alt"></i></div>
-          <h3>Mobile Development</h3>
-          <p>Native and cross-platform iOS and Android apps delivering seamless user experiences.</p>
-          <ul><li>iOS &amp; Android Apps</li><li>React Native / Flutter</li><li>App Store Optimization</li></ul>
-          <a href="#contact" class="s-link">Get Started <i class="fas fa-arrow-right"></i></a>
+          <h3 data-i18n="s2.h3">Mobile Development</h3>
+          <p data-i18n="s2.p">Native and cross-platform iOS and Android apps delivering seamless user experiences.</p>
+          <ul>
+            <li data-i18n="s2.li1">iOS &amp; Android Apps</li>
+            <li data-i18n="s2.li2">React Native / Flutter</li>
+            <li data-i18n="s2.li3">App Store Optimization</li>
+            <li data-i18n="s2.li4">AI Integration for Mobile</li>
+          </ul>
+          <a href="#contact" class="s-link"><span data-i18n="s.link">Get Started</span> <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="s-card reveal">
           <div class="s-num">03</div>
           <div class="s-icon"><i class="fas fa-palette"></i></div>
-          <h3>UI/UX Design</h3>
-          <p>Pixel-perfect interfaces and intuitive experiences that convert visitors into loyal users.</p>
-          <ul><li>Product Design</li><li>Prototyping &amp; Wireframes</li><li>Design Systems</li></ul>
-          <a href="#contact" class="s-link">Get Started <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="s-card reveal">
-          <div class="s-num">04</div>
-          <div class="s-icon"><i class="fas fa-brain"></i></div>
-          <h3>AI &amp; Automation</h3>
-          <p>Smart AI-driven solutions, ML models and process automation to supercharge your business.</p>
-          <ul><li>Machine Learning</li><li>Chatbots &amp; NLP</li><li>RPA Automation</li></ul>
-          <a href="#contact" class="s-link">Get Started <i class="fas fa-arrow-right"></i></a>
+          <h3 data-i18n="s3.h3">UI/UX Design</h3>
+          <p data-i18n="s3.p">Pixel-perfect interfaces and intuitive experiences that convert visitors into loyal users.</p>
+          <ul>
+            <li data-i18n="s3.li1">Product Design</li>
+            <li data-i18n="s3.li2">Prototyping &amp; Wireframes</li>
+            <li data-i18n="s3.li3">Design Systems</li>
+          </ul>
+          <a href="#contact" class="s-link"><span data-i18n="s.link">Get Started</span> <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -125,20 +136,20 @@
         <div class="ab-img-small">
           <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&q=80" alt="Development" loading="lazy" />
         </div>
-        <div class="ab-badge"><span class="ab-num">1+</span><span class="ab-label">Years of<br>Excellence</span></div>
+        <div class="ab-badge"><span class="ab-num">1+</span><span class="ab-label" data-i18n="about.badge">Years of Excellence</span></div>
       </div>
       <div class="about-text reveal">
-        <span class="sec-tag">Who We Are</span>
-        <h2>We Are The <span>Phantoms</span><br>Of The Digital World</h2>
-        <p>Phantoms IT is a premium technology company operating with precision and relentless drive. We don't just build software — we build digital legacies. Like phantoms, we work behind the scenes to make your brand unforgettable.</p>
-        <p>Founded by passionate engineers and designers, we've grown into a full-service digital powerhouse trusted by startups and enterprises across the globe.</p>
+        <span class="sec-tag" data-i18n="sec.about.tag">Who We Are</span>
+        <h2 data-i18n-html="about.h2">We Are The <span>Phantoms</span><br>Of The Digital World</h2>
+        <p data-i18n="about.p1">Phantoms IT is a premium technology company operating with precision and relentless drive. We don't just build software — we build digital legacies.</p>
+        <p data-i18n="about.p2">Founded by passionate engineers and designers, we've grown into a full-service digital powerhouse trusted by startups and enterprises across the globe.</p>
         <div class="about-feats">
-          <div class="ab-feat"><div class="ab-feat-icon"><i class="fas fa-bolt"></i></div><div><strong>Agile Development</strong><span>Rapid iterations and continuous delivery for maximum value.</span></div></div>
-          <div class="ab-feat"><div class="ab-feat-icon"><i class="fas fa-comments"></i></div><div><strong>Transparent Communication</strong><span>Always in the loop — daily updates, weekly reports.</span></div></div>
-          <div class="ab-feat"><div class="ab-feat-icon"><i class="fas fa-check-double"></i></div><div><strong>Quality Guaranteed</strong><span>Rigorous testing and code reviews on every project.</span></div></div>
-          <div class="ab-feat"><div class="ab-feat-icon"><i class="fas fa-headset"></i></div><div><strong>24/7 Support</strong><span>Our phantoms never sleep — neither does our support team.</span></div></div>
+          <div class="ab-feat"><div class="ab-feat-icon"><i class="fas fa-bolt"></i></div><div><strong data-i18n="about.feat1.t">Agile Development</strong><span data-i18n="about.feat1.d">Rapid iterations and continuous delivery for maximum value.</span></div></div>
+          <div class="ab-feat"><div class="ab-feat-icon"><i class="fas fa-comments"></i></div><div><strong data-i18n="about.feat2.t">Transparent Communication</strong><span data-i18n="about.feat2.d">Always in the loop — daily updates, weekly reports.</span></div></div>
+          <div class="ab-feat"><div class="ab-feat-icon"><i class="fas fa-check-double"></i></div><div><strong data-i18n="about.feat3.t">Quality Guaranteed</strong><span data-i18n="about.feat3.d">Rigorous testing and code reviews on every project.</span></div></div>
+          <div class="ab-feat"><div class="ab-feat-icon"><i class="fas fa-headset"></i></div><div><strong data-i18n="about.feat4.t">24/7 Support</strong><span data-i18n="about.feat4.d">Our phantoms never sleep — neither does our support team.</span></div></div>
         </div>
-        <a href="#contact" class="btn-gold">Work With Us <i class="fas fa-arrow-right"></i></a>
+        <a href="#contact" class="btn-gold"><span data-i18n="about.btn">Work With Us</span> <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </section>
@@ -147,57 +158,53 @@
   <section class="section process-sec">
     <div class="container">
       <div class="sec-head reveal">
-        <span class="sec-tag">How We Work</span>
-        <h2>Our <span>Process</span></h2>
-        <p>A battle-tested workflow delivering exceptional results every single time.</p>
+        <span class="sec-tag" data-i18n="sec.process.tag">How We Work</span>
+        <h2 data-i18n-html="sec.process.h2">Our <span>Process</span></h2>
+        <p data-i18n="sec.process.p">A battle-tested workflow delivering exceptional results every single time.</p>
       </div>
       <div class="process-grid">
-        <div class="p-step reveal"><div class="p-step-num">01</div><div class="p-step-icon"><i class="fas fa-comments"></i></div><h4>Discovery</h4><p>Deep dive into your goals, audience and technical requirements.</p></div>
-        <div class="p-step reveal"><div class="p-step-num">02</div><div class="p-step-icon"><i class="fas fa-pencil-ruler"></i></div><h4>Design</h4><p>Stunning prototypes and UI systems aligned with your brand identity.</p></div>
-        <div class="p-step reveal"><div class="p-step-num">03</div><div class="p-step-icon"><i class="fas fa-laptop-code"></i></div><h4>Development</h4><p>Clean, scalable code written by senior engineers with best practices.</p></div>
-        <div class="p-step reveal"><div class="p-step-num">04</div><div class="p-step-icon"><i class="fas fa-rocket"></i></div><h4>Launch</h4><p>Rigorous QA, smooth deployment, and ongoing post-launch support.</p></div>
+        <div class="p-step reveal"><div class="p-step-num">01</div><div class="p-step-icon"><i class="fas fa-comments"></i></div><h4 data-i18n="p1.h4">Discovery</h4><p data-i18n="p1.p">Deep dive into your goals, audience and technical requirements.</p></div>
+        <div class="p-step reveal"><div class="p-step-num">02</div><div class="p-step-icon"><i class="fas fa-pencil-ruler"></i></div><h4 data-i18n="p2.h4">Design</h4><p data-i18n="p2.p">Stunning prototypes and UI systems aligned with your brand identity.</p></div>
+        <div class="p-step reveal"><div class="p-step-num">03</div><div class="p-step-icon"><i class="fas fa-laptop-code"></i></div><h4 data-i18n="p3.h4">Development</h4><p data-i18n="p3.p">Clean, scalable code written by senior engineers with best practices.</p></div>
+        <div class="p-step reveal"><div class="p-step-num">04</div><div class="p-step-icon"><i class="fas fa-rocket"></i></div><h4 data-i18n="p4.h4">Launch</h4><p data-i18n="p4.p">Rigorous QA, smooth deployment, and ongoing post-launch support.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- PORTFOLIO — ReflexMe only -->
+  <!-- PORTFOLIO -->
   <section id="portfolio" class="section portfolio-sec">
     <div class="container">
       <div class="sec-head reveal">
-        <span class="sec-tag">Our Work</span>
-        <h2>Featured <span>Project</span></h2>
-        <p>Our latest product — live on the App Store and loved by users worldwide.</p>
+        <span class="sec-tag" data-i18n="sec.portfolio.tag">Our Work</span>
+        <h2 data-i18n-html="sec.portfolio.h2">Featured <span>Project</span></h2>
+        <p data-i18n="sec.portfolio.p">Our latest product — live on the App Store and loved by users worldwide.</p>
       </div>
 
+      <!-- ReflexMe -->
       <div class="reflexme-showcase reveal">
         <div class="rxm-left">
-          <div class="rxm-tag"><i class="fab fa-apple"></i> Available on App Store</div>
+          <div class="rxm-tag"><i class="fab fa-apple"></i> <span data-i18n="rxm.tag">Available on App Store</span></div>
           <h3>ReflexMe</h3>
-          <p class="rxm-tagline">Improve your mood, track habits, and care for your mental health.</p>
-          <p class="rxm-desc">ReflexMe is your personal assistant for mental wellness, habit tracking, and self-development. Mindfulness tools for a better you — try it for free!</p>
-
+          <p class="rxm-tagline" data-i18n="rxm.tagline">Improve your mood, track habits, and care for your mental health.</p>
+          <p class="rxm-desc" data-i18n="rxm.desc">ReflexMe is your personal assistant for mental wellness, habit tracking, and self-development. Mindfulness tools for a better you — try it for free!</p>
           <ul class="rxm-features">
-            <li><i class="fas fa-book-open"></i> Mood and gratitude journal</li>
-            <li><i class="fas fa-check-circle"></i> Habit and water tracker</li>
-            <li><i class="fas fa-spa"></i> Meditations and breathing exercises</li>
-            <li><i class="fas fa-quote-right"></i> Affirmations and quotes</li>
-            <li><i class="fas fa-brain"></i> Personality tests and insights</li>
-            <li><i class="fas fa-bell"></i> Reminders and progress tracking</li>
+            <li><i class="fas fa-book-open"></i> <span data-i18n="rxm.f1">Mood and gratitude journal</span></li>
+            <li><i class="fas fa-check-circle"></i> <span data-i18n="rxm.f2">Habit and water tracker</span></li>
+            <li><i class="fas fa-spa"></i> <span data-i18n="rxm.f3">Meditations and breathing exercises</span></li>
+            <li><i class="fas fa-quote-right"></i> <span data-i18n="rxm.f4">Affirmations and quotes</span></li>
+            <li><i class="fas fa-brain"></i> <span data-i18n="rxm.f5">Personality tests and insights</span></li>
+            <li><i class="fas fa-bell"></i> <span data-i18n="rxm.f6">Reminders and progress tracking</span></li>
           </ul>
-
-          <p class="rxm-footer-note">ReflexMe helps you become more mindful, calm, and happy. All your data is securely protected.</p>
-
           <div class="rxm-actions">
             <a href="https://apps.apple.com/app/reflexme/id6762619536" target="_blank" rel="noopener" class="btn-appstore">
               <i class="fab fa-apple"></i>
-              <div><small>Download on the</small><strong>App Store</strong></div>
+              <div><small data-i18n="rxm.dl.small">Download on the</small><strong data-i18n="rxm.dl.strong">App Store</strong></div>
             </a>
             <a href="https://apps.apple.com/app/reflexme/id6762619536" target="_blank" rel="noopener" class="btn-ghost rxm-more">
-              View on App Store <i class="fas fa-external-link-alt"></i>
+              <span data-i18n="rxm.view">View on App Store</span> <i class="fas fa-external-link-alt"></i>
             </a>
           </div>
         </div>
-
         <div class="rxm-right">
           <div class="rxm-phone-wrap">
             <div class="rxm-phone rxm-phone-1">
@@ -214,6 +221,65 @@
         </div>
       </div>
 
+      <!-- MORE VIDEO PROJECTS -->
+      <div class="sec-head reveal more-projects-head">
+        <span class="sec-tag" data-i18n="sec.more.tag">More Projects</span>
+        <h2 data-i18n-html="sec.more.h2">More of Our <span>Work</span></h2>
+        <p data-i18n="sec.more.p">Real projects for real business — watch the video presentations.</p>
+      </div>
+      <div class="video-projects-grid">
+
+        <div class="vp-card reveal" data-key="vp1" data-video="">
+          <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80" alt="Beauty Salon" loading="lazy" />
+          <div class="vp-over">
+            <div class="vp-play-btn"><i class="fas fa-play"></i></div>
+            <span class="vp-cat" data-i18n="vp1.cat">Web Development</span>
+            <h4 data-i18n="vp1.title">Beauty Salon "Aura"</h4>
+            <p data-i18n="vp1.short">Elegant booking &amp; brand presence for a premium beauty salon</p>
+          </div>
+        </div>
+
+        <div class="vp-card reveal" data-key="vp2" data-video="">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80" alt="Cafe Moka" loading="lazy" />
+          <div class="vp-over">
+            <div class="vp-play-btn"><i class="fas fa-play"></i></div>
+            <span class="vp-cat" data-i18n="vp2.cat">Web Development</span>
+            <h4 data-i18n="vp2.title">Café "Moka"</h4>
+            <p data-i18n="vp2.short">Cozy digital home with menu, atmosphere &amp; online reservations</p>
+          </div>
+        </div>
+
+        <div class="vp-card reveal" data-key="vp3" data-video="">
+          <img src="https://images.unsplash.com/photo-1605806616949-1e87b487fc2f?w=800&q=80" alt="Quest Room" loading="lazy" />
+          <div class="vp-over">
+            <div class="vp-play-btn"><i class="fas fa-play"></i></div>
+            <span class="vp-cat" data-i18n="vp3.cat">Web + Mobile</span>
+            <h4 data-i18n="vp3.title">Quest Room "Phantom Zone"</h4>
+            <p data-i18n="vp3.short">Immersive escape room with team booking &amp; leaderboards</p>
+          </div>
+        </div>
+
+        <div class="vp-card reveal" data-key="vp4" data-video="">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Restaurant Bella Vista" loading="lazy" />
+          <div class="vp-over">
+            <div class="vp-play-btn"><i class="fas fa-play"></i></div>
+            <span class="vp-cat" data-i18n="vp4.cat">Web Development</span>
+            <h4 data-i18n="vp4.title">Restaurant "Bella Vista"</h4>
+            <p data-i18n="vp4.short">Premium restaurant with interactive menu &amp; table reservations</p>
+          </div>
+        </div>
+
+        <div class="vp-card reveal" data-key="vp5" data-video="">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="PrintCraft Typography" loading="lazy" />
+          <div class="vp-over">
+            <div class="vp-play-btn"><i class="fas fa-play"></i></div>
+            <span class="vp-cat" data-i18n="vp5.cat">Web Development</span>
+            <h4 data-i18n="vp5.title">PrintCraft Typography</h4>
+            <p data-i18n="vp5.short">Full digital storefront with instant quote calculator</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -221,8 +287,8 @@
   <section class="section tech-sec">
     <div class="container">
       <div class="sec-head reveal">
-        <span class="sec-tag">Tech Stack</span>
-        <h2>Technologies We <span>Master</span></h2>
+        <span class="sec-tag" data-i18n="sec.tech.tag">Tech Stack</span>
+        <h2 data-i18n-html="sec.tech.h2">Technologies We <span>Master</span></h2>
       </div>
       <div class="tech-grid">
         <div class="tech-item reveal"><i class="fab fa-react"></i><span>React</span></div>
@@ -245,9 +311,9 @@
   <section class="cta-sec">
     <div class="container cta-inner reveal">
       <div class="cta-logo"><img src="PhantomsITT.jpg" alt="Phantoms IT" /></div>
-      <h2>Ready to Haunt Your Competition?</h2>
-      <p>Let's build something extraordinary together. Get a free consultation today.</p>
-      <a href="#contact" class="btn-gold btn-lg">Start Your Project <i class="fas fa-arrow-right"></i></a>
+      <h2 data-i18n="cta.h2">Ready to Haunt Your Competition?</h2>
+      <p data-i18n="cta.p">Let's build something extraordinary together. Get a free consultation today.</p>
+      <a href="#contact" class="btn-gold btn-lg"><span data-i18n="cta.btn">Start Your Project</span> <i class="fas fa-arrow-right"></i></a>
     </div>
   </section>
 
@@ -255,37 +321,48 @@
   <section id="contact" class="section contact-sec">
     <div class="container">
       <div class="sec-head reveal">
-        <span class="sec-tag">Get In Touch</span>
-        <h2>Contact <span>Us</span></h2>
-        <p>Have a project in mind? We'd love to hear about it.</p>
+        <span class="sec-tag" data-i18n="sec.contact.tag">Get In Touch</span>
+        <h2 data-i18n-html="sec.contact.h2">Contact <span>Us</span></h2>
+        <p data-i18n="sec.contact.p">Have a project in mind? We'd love to hear about it.</p>
       </div>
       <div class="contact-grid">
         <div class="contact-left reveal">
-          <div class="c-card"><i class="fas fa-envelope"></i><div><strong>Email</strong><span>reflexmeapp@gmail.com</span></div></div>
-          <div class="c-card"><i class="fas fa-clock"></i><div><strong>Hours</strong><span>Mon – Fri: 9:00 AM – 7:00 PM</span></div></div>
+          <div class="c-card"><i class="fas fa-envelope"></i><div><strong data-i18n="contact.email">Email</strong><span>reflexmeapp@gmail.com</span></div></div>
+          <div class="c-card"><i class="fas fa-clock"></i><div><strong data-i18n="contact.hours">Hours</strong><span data-i18n="contact.hours.val">Mon – Fri: 10:00 AM – 5:00 PM</span></div></div>
         </div>
         <form class="contact-form reveal" id="contactForm" novalidate>
           <div class="f-row">
-            <div class="f-group"><label for="cname">Full Name *</label><input type="text" id="cname" name="name" placeholder="John Doe" required /></div>
-            <div class="f-group"><label for="cemail">Email Address *</label><input type="email" id="cemail" name="email" placeholder="john@example.com" required /></div>
+            <div class="f-group">
+              <label for="cname" data-i18n="form.name.label">Full Name *</label>
+              <input type="text" id="cname" name="name" placeholder="John Doe" data-i18n-placeholder="form.name.ph" required />
+            </div>
+            <div class="f-group">
+              <label for="cemail" data-i18n="form.email.label">Email Address *</label>
+              <input type="email" id="cemail" name="email" placeholder="john@example.com" data-i18n-placeholder="form.email.ph" required />
+            </div>
           </div>
           <div class="f-row">
-            <div class="f-group"><label for="cphone">Phone Number</label><input type="tel" id="cphone" name="phone" placeholder="+1 (555) 000-0000" /></div>
             <div class="f-group">
-              <label for="cservice">Service Needed</label>
+              <label for="cphone" data-i18n="form.phone.label">Phone Number</label>
+              <input type="tel" id="cphone" name="phone" placeholder="+1 (555) 000-0000" data-i18n-placeholder="form.phone.ph" />
+            </div>
+            <div class="f-group">
+              <label for="cservice" data-i18n="form.service.label">Service Needed</label>
               <select id="cservice" name="service">
-                <option value="">Select a service...</option>
-                <option>Web Development</option>
-                <option>Mobile Development</option>
-                <option>UI/UX Design</option>
-                <option>AI &amp; Automation</option>
-                <option>Other</option>
+                <option value="" data-i18n="form.opt0">Select a service...</option>
+                <option data-i18n="form.opt1">Web Development</option>
+                <option data-i18n="form.opt2">Mobile Development</option>
+                <option data-i18n="form.opt3">UI/UX Design</option>
+                <option data-i18n="form.opt4">Other</option>
               </select>
             </div>
           </div>
-          <div class="f-group"><label for="cmsg">Project Details *</label><textarea id="cmsg" name="message" rows="5" placeholder="Tell us about your project..." required></textarea></div>
-          <button type="submit" class="btn-gold btn-full"><span id="btnText">Send Message</span><i class="fas fa-paper-plane"></i></button>
-          <div class="f-success" id="fSuccess"><i class="fas fa-check-circle"></i> Message sent! We'll respond within 24 hours.</div>
+          <div class="f-group">
+            <label for="cmsg" data-i18n="form.msg.label">Project Details *</label>
+            <textarea id="cmsg" name="message" rows="5" placeholder="Tell us about your project..." data-i18n-placeholder="form.msg.ph" required></textarea>
+          </div>
+          <button type="submit" class="btn-gold btn-full"><span id="btnText" data-i18n="form.submit">Send Message</span><i class="fas fa-paper-plane"></i></button>
+          <div class="f-success" id="fSuccess"><i class="fas fa-check-circle"></i> <span data-i18n="form.success">Message sent! We'll respond within 24 hours.</span></div>
         </form>
       </div>
     </div>
@@ -300,26 +377,25 @@
             <img src="PhantomsITT.jpg" alt="Phantoms IT" class="logo-img" />
             <span class="logo-text">PHANTOMS <em>IT</em></span>
           </a>
-          <p>We operate in the shadows, delivering digital excellence that leaves a lasting impression on your market.</p>
+          <p data-i18n="f.about.desc">We operate in the shadows, delivering digital excellence that leaves a lasting impression on your market.</p>
           <div class="f-contact-info">
             <span><i class="fas fa-envelope"></i> reflexmeapp@gmail.com</span>
           </div>
         </div>
         <div class="f-col">
-          <h5>Services</h5>
+          <h5 data-i18n="f.services">Services</h5>
           <ul>
-            <li><a href="#services">Web Development</a></li>
-            <li><a href="#services">Mobile Apps</a></li>
-            <li><a href="#services">UI/UX Design</a></li>
-            <li><a href="#services">AI &amp; Automation</a></li>
+            <li><a href="#services" data-i18n="f.s1">Web Development</a></li>
+            <li><a href="#services" data-i18n="f.s2">Mobile Apps</a></li>
+            <li><a href="#services" data-i18n="f.s3">UI/UX Design</a></li>
           </ul>
         </div>
         <div class="f-col">
-          <h5>Company</h5>
+          <h5 data-i18n="f.company">Company</h5>
           <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about" data-i18n="f.c1">About Us</a></li>
+            <li><a href="#portfolio" data-i18n="f.c2">Portfolio</a></li>
+            <li><a href="#contact" data-i18n="f.c3">Contact</a></li>
           </ul>
         </div>
         <div class="f-col">
@@ -332,14 +408,34 @@
     </div>
     <div class="footer-bottom">
       <div class="container footer-bot-inner">
-        <p>© 2026 Phantoms IT. All rights reserved.</p>
+        <p data-i18n="f.copyright">© 2026 Phantoms IT. All rights reserved.</p>
         <div class="f-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <a href="#" data-i18n="f.privacy">Privacy Policy</a>
+          <a href="#" data-i18n="f.terms">Terms of Service</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- VIDEO MODAL -->
+  <div id="videoModal" class="video-modal" role="dialog" aria-modal="true">
+    <div class="vm-overlay" id="vmOverlay"></div>
+    <div class="vm-inner">
+      <button class="vm-close" id="vmClose" aria-label="Close"><i class="fas fa-times"></i></button>
+      <div class="vm-video-wrap">
+        <iframe id="vmIframe" src="" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        <div class="vm-no-video" id="vmNoVideo" style="display:none">
+          <i class="fas fa-film"></i>
+          <span data-i18n="vm.soon">Video coming soon</span>
+        </div>
+      </div>
+      <div class="vm-info">
+        <span id="vmCat" class="vm-cat-tag"></span>
+        <h3 id="vmTitle"></h3>
+        <p id="vmDesc"></p>
+      </div>
+    </div>
+  </div>
 
   <button class="btt" id="btt" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
   <script src="js/main.js"></script>
