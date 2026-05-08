@@ -271,11 +271,11 @@ const translations = {
 
 /* ---------- VIDEO PROJECT DATA ---------- */
 const vpData = {
-  vp1: { video: '', descKey: 'vp1' },
-  vp2: { video: '', descKey: 'vp2' },
-  vp3: { video: '', descKey: 'vp3' },
-  vp4: { video: '', descKey: 'vp4' },
-  vp5: { video: '', descKey: 'vp5' },
+  vp1: { video: 'videos/vp1.mp4', descKey: 'vp1' },
+  vp2: { video: 'videos/vp2.mp4', descKey: 'vp2' },
+  vp3: { video: 'videos/vp3.mp4', descKey: 'vp3' },
+  vp4: { video: 'videos/vp4.mp4', descKey: 'vp4' },
+  vp5: { video: 'videos/vp5.mp4', descKey: 'vp5' },
 };
 
 let currentLang = 'en';
@@ -399,7 +399,7 @@ document.getElementById('langSwitcher') && document.getElementById('langSwitcher
 
 /* ---------- VIDEO MODAL ---------- */
 const modal = document.getElementById('videoModal');
-const vmIframe = document.getElementById('vmIframe');
+const vmVideo = document.getElementById('vmVideo');
 const vmNoVideo = document.getElementById('vmNoVideo');
 const vmCat = document.getElementById('vmCat');
 const vmTitle = document.getElementById('vmTitle');
@@ -409,18 +409,15 @@ function openModal(key) {
   const d = vpData[key];
   if (!d || !modal) return;
   const t = translations[currentLang];
-  const catKey   = d.descKey + '.cat';
-  const titleKey = d.descKey + '.title';
-  const shortKey = d.descKey + '.short';
-  if (vmCat)   vmCat.textContent   = t[catKey]   || '';
-  if (vmTitle) vmTitle.textContent = t[titleKey] || '';
-  if (vmDesc)  vmDesc.textContent  = t[shortKey] || '';
-  if (d.video && vmIframe) {
-    vmIframe.src = d.video;
-    vmIframe.style.display = 'block';
+  if (vmCat)   vmCat.textContent   = t[d.descKey + '.cat']   || '';
+  if (vmTitle) vmTitle.textContent = t[d.descKey + '.title'] || '';
+  if (vmDesc)  vmDesc.textContent  = t[d.descKey + '.short'] || '';
+  if (d.video && vmVideo) {
+    vmVideo.src = d.video;
+    vmVideo.style.display = 'block';
     if (vmNoVideo) vmNoVideo.style.display = 'none';
   } else {
-    if (vmIframe) { vmIframe.src = ''; vmIframe.style.display = 'none'; }
+    if (vmVideo) { vmVideo.src = ''; vmVideo.style.display = 'none'; }
     if (vmNoVideo) vmNoVideo.style.display = 'flex';
   }
   modal.classList.add('open');
@@ -430,7 +427,9 @@ function openModal(key) {
 function closeModal() {
   modal.classList.remove('open');
   document.body.style.overflow = '';
-  setTimeout(() => { if (vmIframe) vmIframe.src = ''; }, 300);
+  setTimeout(() => {
+    if (vmVideo) { vmVideo.pause(); vmVideo.src = ''; vmVideo.load(); }
+  }, 300);
 }
 
 document.querySelectorAll('.vp-play-trigger, .vp-img-wrap').forEach(el => {
