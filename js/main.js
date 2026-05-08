@@ -91,7 +91,7 @@ const translations = {
     'f.company': 'Company', 'f.c1': 'About Us', 'f.c2': 'Portfolio', 'f.c3': 'Contact',
     'f.copyright': '© 2026 Phantoms IT. All rights reserved.',
     'f.privacy': 'Privacy Policy', 'f.terms': 'Terms of Service',
-    'vm.soon': 'Video coming soon',
+    'vm.soon': 'Video Presentation', 'vm.soon2': 'Coming soon — check back later',
   },
   ru: {
     'nav.home': 'Главная', 'nav.services': 'Услуги', 'nav.about': 'О нас',
@@ -178,7 +178,7 @@ const translations = {
     'f.company': 'Компания', 'f.c1': 'О нас', 'f.c2': 'Портфолио', 'f.c3': 'Контакт',
     'f.copyright': '© 2026 Phantoms IT. Все права защищены.',
     'f.privacy': 'Политика конфиденциальности', 'f.terms': 'Условия использования',
-    'vm.soon': 'Видео скоро будет',
+    'vm.soon': 'Видеопрезентация', 'vm.soon2': 'Скоро появится — заходите позже',
   },
   uk: {
     'nav.home': 'Головна', 'nav.services': 'Послуги', 'nav.about': 'Про нас',
@@ -265,7 +265,7 @@ const translations = {
     'f.company': 'Компанія', 'f.c1': 'Про нас', 'f.c2': 'Портфоліо', 'f.c3': 'Контакт',
     'f.copyright': '© 2026 Phantoms IT. Усі права захищені.',
     'f.privacy': 'Політика конфіденційності', 'f.terms': 'Умови використання',
-    'vm.soon': 'Відео незабаром',
+    'vm.soon': 'Відеопрезентація', 'vm.soon2': 'Незабаром — заходьте пізніше',
   }
 };
 
@@ -407,21 +407,20 @@ const vmDesc = document.getElementById('vmDesc');
 
 function openModal(key) {
   const d = vpData[key];
-  if (!d) return;
+  if (!d || !modal) return;
   const t = translations[currentLang];
-  const catKey  = d.descKey + '.cat';
+  const catKey   = d.descKey + '.cat';
   const titleKey = d.descKey + '.title';
   const shortKey = d.descKey + '.short';
   if (vmCat)   vmCat.textContent   = t[catKey]   || '';
   if (vmTitle) vmTitle.textContent = t[titleKey] || '';
   if (vmDesc)  vmDesc.textContent  = t[shortKey] || '';
-  if (d.video) {
+  if (d.video && vmIframe) {
     vmIframe.src = d.video;
     vmIframe.style.display = 'block';
     if (vmNoVideo) vmNoVideo.style.display = 'none';
   } else {
-    vmIframe.src = '';
-    vmIframe.style.display = 'none';
+    if (vmIframe) { vmIframe.src = ''; vmIframe.style.display = 'none'; }
     if (vmNoVideo) vmNoVideo.style.display = 'flex';
   }
   modal.classList.add('open');
@@ -435,7 +434,10 @@ function closeModal() {
 }
 
 document.querySelectorAll('.vp-play-trigger, .vp-img-wrap').forEach(el => {
-  el.addEventListener('click', () => openModal(el.dataset.key));
+  el.addEventListener('click', function(e) {
+    e.stopPropagation();
+    openModal(this.dataset.key);
+  });
 });
 
 document.getElementById('vmClose') && document.getElementById('vmClose').addEventListener('click', closeModal);
