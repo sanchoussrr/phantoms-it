@@ -363,6 +363,7 @@ h2 span{color:var(--gold)}
 }
 .tech-item:hover{border-color:rgba(201,168,76,.35);background:rgba(201,168,76,.05);transform:translateY(-4px)}
 .tech-item i{font-size:2rem;color:var(--tx2);margin-bottom:9px;display:block;transition:.3s}
+.tech-item i.devicon-typescript-plain{font-size:2rem}
 .tech-item:hover i{color:var(--gold)}
 .tech-item span{font-size:.72rem;font-weight:600;letter-spacing:.4px;color:var(--tx2)}
 

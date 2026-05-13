@@ -373,21 +373,37 @@ if (form) {
     const btn = document.getElementById('btnText');
     const success = document.getElementById('fSuccess');
     const orig = btn ? btn.textContent : 'Send Message';
-    if (btn) btn.textContent = 'Sending...';
-    const data = new FormData(form);
-    const body = {};
-    data.forEach((v, k) => body[k] = v);
+    if (btn) { btn.textContent = 'Sending...'; btn.parentElement.disabled = true; }
+
+    const formData = new FormData(form);
+
     try {
-      await fetch('https://formsubmit.co/ajax/reflexmeapp@gmail.com', {
+      const res = await fetch('https://formsubmit.co/ajax/reflexmeapp@gmail.com', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(body)
+        headers: { 'Accept': 'application/json' },
+        body: formData
       });
-      form.reset();
-      if (success) { success.style.display = 'flex'; setTimeout(() => success.style.display = 'none', 5000); }
-    } catch (_) {}
-    if (btn) btn.textContent = orig;
+      const json = await res.json();
+      if (json.success === 'true' || json.success === true) {
+        form.reset();
+        if (success) { success.style.display = 'flex'; setTimeout(() => success.style.display = 'none', 6000); }
+      } else {
+        throw new Error('FormSubmit error');
+      }
+    } catch (_) {
+      // Fallback: native POST (activates FormSubmit on first use)
+      form.submit();
+    }
+
+    if (btn) { btn.textContent = orig; btn.parentElement.disabled = false; }
   });
+}
+
+/* Show success if redirected back with ?sent=1 */
+if (window.location.search.includes('sent=1')) {
+  const success = document.getElementById('fSuccess');
+  if (success) { success.style.display = 'flex'; setTimeout(() => success.style.display = 'none', 6000); }
+  window.history.replaceState({}, '', window.location.pathname);
 }
 
 /* ---------- LANG SWITCHER ---------- */
